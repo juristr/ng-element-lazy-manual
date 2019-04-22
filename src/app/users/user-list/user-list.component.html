@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-list *ngIf="users && users.length > 0; else noUsers">
+    <mat-list-item *ngFor="let user of users">{{ user.name }}</mat-list-item>
+  </mat-list>
+
+  <ng-template #noUsers>
+    No users available
+  </ng-template>
+</mat-card>

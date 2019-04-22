@@ -1,0 +1,26 @@
+<div class="flexbox-parent">
+  <div class="flexbox-item header">
+    <mat-toolbar color="primary" role="header" class="app-navbar">
+      <div fxFlex="100px">
+        {{ title }}
+      </div>
+      <div fxFlex fxFill></div>
+    </mat-toolbar>
+  </div>
+
+  <div class="flexbox-item fill-area content flexbox-item-grow">
+    <mat-drawer-container class="app-container">
+      <mat-drawer-content class="app-page-container">
+        
+        <button mat-raised-button (click)="onLoadUsers()">Load user list</button>
+        <div id="user-container"></div>
+
+
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+
+  <div class="flexbox-item footer">
+    <a href="https://juristr.com">juristr.com</a>
+  </div>
+</div>
