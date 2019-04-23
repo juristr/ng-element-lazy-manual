@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 import { ComponentLoaderService } from './core/component-loader.service';
 
@@ -10,7 +10,10 @@ import { ComponentLoaderService } from './core/component-loader.service';
 export class AppComponent {
   title = 'Lazy Loading Elements';
 
-  constructor(private componentLoader: ComponentLoaderService) {}
+  constructor(
+    private componentLoader: ComponentLoaderService,
+    private elementRef: ElementRef
+  ) {}
 
   onLoadUsers() {
     this.componentLoader.loadComponent('app-user-list').then(componentEl => {
@@ -23,8 +26,9 @@ export class AppComponent {
         }
       ];
 
-      document.getElementById('user-container').appendChild(componentEl);
+      this.elementRef.nativeElement
+        .querySelector('#user-container')
+        .appendChild(componentEl);
     });
   }
-
 }
