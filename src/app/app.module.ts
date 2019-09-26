@@ -13,7 +13,7 @@ import { SharedModule } from './shared/shared.module';
   declarations: [AppComponent],
   imports: [BrowserModule, BrowserAnimationsModule, SharedModule],
   providers: [
-    { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader }
+    // { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader }
   ],
   bootstrap: [AppComponent]
 })
